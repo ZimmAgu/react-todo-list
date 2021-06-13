@@ -4,7 +4,7 @@
 
 import React from 'react'
 
-function logic () {
+function Logic () {
     return (
         <div>
             
@@ -12,4 +12,4 @@ function logic () {
     )
 }
 
-export default logic
+export default Logic

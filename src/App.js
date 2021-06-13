@@ -1,11 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
+import Form from './my_Components/form'
 
 function App() {
   return (
-    <div className="App">
-      <Component name="Shiori" />
-    </div>
+    <>
+      <Form />
+    </>
   );
 }
 

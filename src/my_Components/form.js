@@ -1,19 +1,24 @@
 /*
     Author: Zimuzo Agu
 
-    Description of File: Implements list.js as a component and adds a nice little header to it
+    Description of File: 
+    Imports all of the functionality from list.js as a component and adds a nice litte header to the top of it 
 */
 
-import React from 'react'
 
-function form () {
+import React from 'react'
+import List from './list'
+
+
+function Form() {
     return (
-        <div>
-            
-        </div>
+        <>
+          <List />  
+        </>
     )
 }
 
-export default form
+export default Form
+
 
 
