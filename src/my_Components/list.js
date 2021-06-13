@@ -8,13 +8,16 @@
 
 import React, {useState} from 'react'
 	
-const [input, set_Input] = useState(''); // The user input from the forms is the current state and the set_Input function will be used to change that user input when needed
+function List (props) {
+	const [input, set_Input] = useState(''); // The user input from the forms is the current state and the set_Input function will be used to change that user input when needed
 
+	const handle_Task_Submission = (event) => {
+		event.preventDefault()
+	}
 
-function List () {
 	return (
 		<>
-			<form className="user_Input_Form">
+			<form className="user_Input_Form" onSubmit={handle_Task_Submission}>
 				<input 
 					type="text"
 					name="task_Text_Box"
@@ -29,12 +32,6 @@ function List () {
 					className="user_Input_Submission_Button"
 				/>
 			</form>
-
-			<form action="http://www.example.com">
-
-				<p>This is where the form controls will appear.</p>
-			</form>
-
     	</>
     )
 }
