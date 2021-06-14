@@ -6,11 +6,20 @@
     and assigns those functions to icon names
 */
 
-import React from 'react'
+import React, {useState} from 'react'
 import {AiFillCloseCircle} from 'react-icons/ai'
 import {AiFillEdit} from 'react-icons/ai'
 
 function IconLogic ({stored_Items, complete_Task, update_Task, remove_Task}) {
+
+    const [current_Edit, set_Edit] = useState({
+        edition_Id: null,
+        edition_Value: ''
+    })
+
+
+
+
     /* 
         Return function Explanation:
         The state of the stored items are passed in as a prop from list_Item_Logic.js

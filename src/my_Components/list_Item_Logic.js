@@ -23,8 +23,17 @@ function ListItemLogic () {
     };
 
 
-    const complete_List_Item = () => {
-        
+    // Toggles a task between complete & incomplete
+    const complete_List_Item = (id) => {
+        // Goes through every task in the list with a map
+        let completed_Task = stored_List_Items.map(current_Item => {
+            // If the current item being clicked matches the key passed to the parameter. The the item gets toggled between complete & incomplete
+            if (current_Item.id == id) {
+                current_Item.isComplete = !current_Item.isComplete;
+            }
+
+            return current_Item;
+        })
     }
 
     const update_List_Item = () => {
