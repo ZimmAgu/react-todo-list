@@ -28,7 +28,7 @@ function ListItemLogic () {
         // Goes through every task in the list with a map
         let completed_Task = stored_List_Items.map(current_Item => {
             // If the current item being clicked matches the key passed to the parameter. The the item gets toggled between complete & incomplete
-            if (current_Item.id == id) {
+            if (current_Item.id === id) {
                 current_Item.isComplete = !current_Item.isComplete;
             }
 
@@ -36,8 +36,11 @@ function ListItemLogic () {
         })
     }
 
-    const update_List_Item = () => {
-        
+    const update_List_Item = (id, new_Value) => {
+        set_list_Item(old_Value => old_Value.map(same_Item =>
+            // If the item currently being evaluated matches the id that the user clicked on, the new value of the text box will be returned, otherwise the value of the text box will stay the same 
+            (same_Item.id === id ? new_Value : same_Item)
+        ))
     }
 
     const remove_List_Item = () => {
