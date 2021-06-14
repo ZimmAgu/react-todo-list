@@ -31,10 +31,10 @@ function ListItemLogic () {
             if (current_Item.id === id) {
                 current_Item.isComplete = !current_Item.isComplete;
             }
-
             return current_Item;
         })
-    }
+        set_list_Item(completed_Task);
+    };
 
     const update_List_Item = (id, new_Value) => {
         set_list_Item(old_Value => old_Value.map(same_Item =>
@@ -45,7 +45,7 @@ function ListItemLogic () {
 
     const remove_List_Item = (id) => {
         // Takes all of the stored list items and creates a new array of stored list items with all of the original items in the list except for the item with the specfic id being evaluated
-        const removed_Task = [...stored_List_Items].filter(current_Item => current_Item.id != current_Item)
+        const removed_Task = [...stored_List_Items].filter(current_Item => current_Item.id !== current_Item)
 
         // The ist with the removed item becomes the new state of the list 
         set_list_Item(removed_Task)
