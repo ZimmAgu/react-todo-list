@@ -7,8 +7,10 @@
 */
 
 import React from 'react'
+import {AiFillCloseCircle} from 'react-icons/ai'
+import {AiFillEdit} from 'react-icons/ai'
 
-function Icon_Logic ({stored_Items, complete_Task, update_Task, remove_Task}) {
+function IconLogic ({stored_Items, complete_Task, update_Task, remove_Task}) {
     /* 
         Return function Explanation:
         The state of the stored items are passed in as a prop from list_Item_Logic.js
@@ -20,8 +22,15 @@ function Icon_Logic ({stored_Items, complete_Task, update_Task, remove_Task}) {
         //If the current Item is complete, it is added to the class "completed" so its style (CSS) can be changed to that of a completed task
         <div className={current_Item.isComplete ? 'task_Row completed' : 'task_Row'} key={item_Index}>
 
+            <div className="icons">
+                <div>
+                    <AiFillCloseCircle />
+                    <AiFillEdit />
+                </div>
+            </div>
         </div>
+        
     )
 }
 
-export default Icon_Logic
+export default IconLogic
