@@ -43,8 +43,12 @@ function ListItemLogic () {
         ))
     }
 
-    const remove_List_Item = () => {
-        
+    const remove_List_Item = (id) => {
+        // Takes all of the stored list items and creates a new array of stored list items with all of the original items in the list except for the item with the specfic id being evaluated
+        const removed_Task = [...stored_List_Items].filter(current_Item => current_Item.id != current_Item)
+
+        // The ist with the removed item becomes the new state of the list 
+        set_list_Item(removed_Task)
     }
 
 
