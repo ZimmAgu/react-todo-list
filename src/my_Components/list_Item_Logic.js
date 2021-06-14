@@ -2,15 +2,14 @@
     Author: Zimuzo Agu
 
     Description of File: 
-    Imports all of the functionality from list.js as a component 
-    and adds a nice litte header to the top of it 
+    Implements the logic for adding, deleting, completing, & updating to do items
 */
 
 
 import React, {useState} from 'react'
 import Form from './form'
 
-function AddListItems () {
+function ListItemLogic () {
     const [previous_List_Items, set_list_Item] = useState([]);
 
     const handle_Task_Addition = (current_List_Item) => {
@@ -29,7 +28,7 @@ function AddListItems () {
     )
 }
 
-export default AddListItems
+export default ListItemLogic
 
 
 

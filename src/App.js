@@ -1,10 +1,10 @@
 import './App.css';
-import AddListItems from './my_Components/add_List_Items'
+import ListItemLogic from './my_Components/list_Item_Logic'
 
 function App() {
   return (
     <>
-      <AddListItems />
+      <ListItemLogic />
     </>
   );
 }
