@@ -19,12 +19,17 @@ function Form (props) {
 	const handle_Task_Submission = (event) => { // Triggers when the user presses the submittion button
 		event.preventDefault() // Prevents the page from reloading after the user submits the task
 		
+
+		props.onSubmit ({
+			task_Id: Math.floor(Math.random() * 20000), // Assigns an id number between 1 & 20,000 to a task when it is submitted
+			task_Value: user_Input //Stores the name of the task
+		})
+
 		set__User_Input('') // Makes the input box blank after the user presses submit
+
 	}
 
-
-
-
+	
 	return (
 		<>
 			<form className="user_Input_Form" onSubmit={handle_Task_Submission}>
