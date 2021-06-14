@@ -10,14 +10,14 @@ import React, {useState} from 'react'
 import Form from './form'
 
 function ListItemLogic () {
-    const [previous_List_Items, set_list_Item] = useState([]);
+    const [stored_List_Items, set_list_Item] = useState([]);
 
     const handle_Task_Addition = (current_List_Item) => {
 
-        const store_List_Items = [current_List_Item, ...previous_List_Items];  // Keeps track of the current list item as well as the previous list item
+        const store_List_Items = [current_List_Item, ...stored_List_Items];  // Keeps track of the current list item as well as the previous list item
 
         set_list_Item(store_List_Items); // Pushes the new value of the list item to storage
-        console.log(current_List_Item, ...previous_List_Items);
+        console.log(current_List_Item, ...stored_List_Items);
     };
 
 

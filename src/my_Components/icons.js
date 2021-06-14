@@ -8,7 +8,7 @@
 
 import React from 'react'
 
-function Icon_Logic ({previous_List_Items, complete_Task, remove_Task, update_Task}) {
+function Icon_Logic ({stored_List_Items, complete_Task, remove_Task, update_Task}) {
     return ( 
         <div className={todo.isComplete ? 'task-row complete' : 'task-row'} key={index}> 
 
