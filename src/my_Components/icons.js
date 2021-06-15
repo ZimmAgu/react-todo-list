@@ -12,26 +12,22 @@ import {AiFillCloseCircle} from 'react-icons/ai'
 import {AiFillEdit} from 'react-icons/ai'
 
 function IconLogic ({stored_Items, complete_Task, update_Task, remove_Task}) {
-
-    const [current_Edit, set_Edit] = useState({
+    const [current_Edition, set_Edition] = useState({
         task_Id: null,
         edition_Value: ''
-    })
+    });
 
-    // const send_Update = (new_Value) => {
-    //     update_Task(current_Edit.task_Id, new_Value);
-
-    //     set_Edit({
-    //         task_Id: null,
-    //         edition_Value: ''
-    //     })
-    // }
-
-    // if (current_Edit.task_Id) {
-    //     return <Form edit={current_Edit} onsubmit={send_Update}/>
-    // }
-
-
+    const submitUpdate = edition_Value => {
+        update_Task(current_Edition.task_Id,edition_Value);
+        set_Edition({
+            task_Id: null,
+            edition_Value: ''
+        });
+    };
+    
+    if (current_Edition.task_Id) {
+        return <Form edit_User_Input={current_Edition} onSubmit={submitUpdate} />;
+    }
 
 
     /* 
@@ -54,7 +50,12 @@ function IconLogic ({stored_Items, complete_Task, update_Task, remove_Task}) {
                     <AiFillCloseCircle 
                         onClick={() => remove_Task(current_Item.task_Id)}
                     />
-                    <AiFillEdit />
+                    <AiFillEdit 
+                        onClick={() => set_Edition({
+                                            task_Id: current_Item.task_Id,
+                                            edition_Value: current_Item.task_Value
+                                        })}
+                    />
                 </div>
             </div>
         </div>   

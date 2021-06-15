@@ -37,9 +37,10 @@ function ListItemLogic () {
     };
 
     const update_List_Item = (id, new_Value) => {
-        set_list_Item(old_Value => old_Value.map(same_Item =>
+        set_list_Item(old_Value => old_Value.map(current_Item =>
             // If the item currently being evaluated matches the id that the user clicked on, the new value of the text box will be returned, otherwise the value of the text box will stay the same 
-            (same_Item.id === id ? new_Value : same_Item)
+            (current_Item.task_Id === id ? new_Value : current_Item)
+            
         ));
     };
 
