@@ -15,6 +15,9 @@ function ListItemLogic () {
 
     // Adds each new Task to 
     const handle_Task_Addition = (current_List_Item) => {
+        if (!current_List_Item.task_Value || /^\s*$/.test(current_List_Item.task_Value)) {  // Regular expressions to ignore whitespace & make sure input field is not blank
+            return;
+        }
 
         const all_List_Items = [current_List_Item, ...stored_List_Items];  // Keeps track of the current list item as well as the previous list item
 
@@ -37,6 +40,11 @@ function ListItemLogic () {
     };
 
     const update_List_Item = (id, new_Value) => {
+        if (!new_Value.task_Value || /^\s*$/.test(new_Value.task_Value)) { // Regular expressions to ignore whitespace & make sure input field is not blank
+            return;
+        }
+
+
         set_list_Item(old_Value => old_Value.map(current_Item =>
             // If the item currently being evaluated matches the id that the user clicked on, the new value of the text box will be returned, otherwise the value of the text box will stay the same 
             (current_Item.task_Id === id ? new_Value : current_Item)
@@ -54,6 +62,7 @@ function ListItemLogic () {
 
     return (
         <>
+            <h1>Plan your day with this list</h1>
             <Form onSubmit={handle_Task_Addition}/>  
             <IconLogic 
                 stored_Items={stored_List_Items}

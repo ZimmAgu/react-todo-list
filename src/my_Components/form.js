@@ -6,10 +6,17 @@
 	such as input box, submission button, & form management
 */
 
-import React, {useState} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 	
 function Form (props) {
 	const [user_Input, set__User_Input] = useState(props.edit_User_Input ? props.edit_User_Input.edition_Value : ''); // The user input from the forms is the current state and the set_Input function will be used to change that user input when needed
+
+	const user_Input_Ref = useRef(null) // A reference to the useRef hook that is used below
+
+	useEffect(() => {
+		user_Input_Ref.current.focus() // Uses the useRef hook to automatically focus in on whatever useRef is referencing
+	})
+
 
 	const handle_Input_Change = (event) => {
 		set__User_Input(event.target.value) // Sets the value of the input state to whatever the user enters in the text box
@@ -40,6 +47,7 @@ function Form (props) {
 					onChange={handle_Input_Change}
 					placeholder="Enter a task here"
 					className="user_Input_Text_Box"
+					ref={user_Input_Ref}
 				/>
 
 				<input 
