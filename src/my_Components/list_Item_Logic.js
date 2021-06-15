@@ -6,12 +6,26 @@
 */
 
 
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Form from './form'
 import IconLogic from './icons';
 
 function ListItemLogic () {
     const [stored_List_Items, set_list_Item] = useState([]);
+
+
+    useEffect(() => {
+        const task_Data = localStorage.getItem('user_Task_Storage') // Retrieves all of the items stored in local storage
+
+        if (task_Data) { // Checks if an data is stored
+            set_list_Item(JSON.parse(task_Data)) // If data is stored then the program uses the data from local storage
+        }  
+    }, [])
+
+    useEffect(() => {
+		localStorage.setItem('user_Task_Storage', JSON.stringify(stored_List_Items)) // Stores every list item in local storage
+	})
+
 
     // Adds each new Task to 
     const handle_Task_Addition = (current_List_Item) => {
