@@ -40,16 +40,15 @@ function ListItemLogic () {
         set_list_Item(old_Value => old_Value.map(same_Item =>
             // If the item currently being evaluated matches the id that the user clicked on, the new value of the text box will be returned, otherwise the value of the text box will stay the same 
             (same_Item.id === id ? new_Value : same_Item)
-        ))
-    }
+        ));
+    };
 
     const remove_List_Item = (id) => {
         // Takes all of the stored list items and creates a new array of stored list items with all of the original items in the list except for the item with the specfic id being evaluated
-        const removed_Task = [...stored_List_Items].filter(current_Item => current_Item.id !== current_Item)
+        const removed_Task = [...stored_List_Items].filter(x => x.task_Id !== id)
 
-        // The ist with the removed item becomes the new state of the list 
-        set_list_Item(removed_Task)
-    }
+        set_list_Item(removed_Task);
+    };
 
 
     return (

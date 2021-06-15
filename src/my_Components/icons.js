@@ -18,18 +18,18 @@ function IconLogic ({stored_Items, complete_Task, update_Task, remove_Task}) {
         edition_Value: ''
     })
 
-    const send_Update = (new_Value) => {
-        update_Task(current_Edit.task_Id, new_Value);
+    // const send_Update = (new_Value) => {
+    //     update_Task(current_Edit.task_Id, new_Value);
 
-        set_Edit({
-            task_Id: null,
-            edition_Value: ''
-        })
-    }
+    //     set_Edit({
+    //         task_Id: null,
+    //         edition_Value: ''
+    //     })
+    // }
 
-    if (current_Edit.task_Id) {
-        return <Form edit={current_Edit} onsubmit={send_Update}/>
-    }
+    // if (current_Edit.task_Id) {
+    //     return <Form edit={current_Edit} onsubmit={send_Update}/>
+    // }
 
 
 
@@ -41,7 +41,7 @@ function IconLogic ({stored_Items, complete_Task, update_Task, remove_Task}) {
         The current Item being evaluated in those stored items is passed in as the first parameter
         The Index of the current item is the second parameter and is used as the key to help React identify which items have changed, are added, or are removed
     */
-    return stored_Items.map((current_Item, item_Index) => 
+    return stored_Items.map((current_Item, item_Index) => ( 
         //If the current Item is complete, it is added to the class "completed" so its style (CSS) can be changed to that of a completed task
         <div className={current_Item.isComplete ? 'task_Row completed' : 'task_Row'} key={item_Index}>
 
@@ -51,13 +51,14 @@ function IconLogic ({stored_Items, complete_Task, update_Task, remove_Task}) {
 
             <div className="icons">
                 <div>
-                    <AiFillCloseCircle />
+                    <AiFillCloseCircle 
+                        onClick={() => remove_Task(current_Item.task_Id)}
+                    />
                     <AiFillEdit />
                 </div>
             </div>
-        </div>
-        
-    )
+        </div>   
+    ));
 }
 
 export default IconLogic
