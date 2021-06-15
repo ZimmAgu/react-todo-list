@@ -39,26 +39,41 @@ function Form (props) {
 
 	
 	return (
-		<>
-			<form className="user_Input_Form" onSubmit={handle_Task_Submission}>
-				<input 
-					type="text"
-					name="task_Text_Box"
-					value={user_Input}
-					onChange={handle_Input_Change}
-					placeholder="Enter a task here"
-					className="user_Input_Text_Box"
-					ref={user_Input_Ref}
-				/>
+		<form className="user_Input_Form" onSubmit={handle_Task_Submission}>
+			{props.edit_User_Input ? ( 
+				<>
+					<input 
+						type="text"
+						name="task_Text_Box"
+						value={user_Input}
+						onChange={handle_Input_Change}
+						placeholder="Edit your task"
+						className="user_Input_Text_Box"
+						ref={user_Input_Ref}
+					/>
 
-				<input 
-					type="submit"
-					name="task_Submission_Button"
-					value="Add Task"
-					className="user_Input_Submission_Button"
-				/>
-			</form>
-    	</>
+					<button name="task_Submission_Button" className="user_Input_Submission_Button">
+						<span>Update task</span>
+					</button>
+				</>
+			) : ( 
+				<>
+					<input 
+						type="text"
+						name="task_Text_Box"
+						value={user_Input}
+						onChange={handle_Input_Change}
+						placeholder="Enter a task here"
+						className="user_Input_Text_Box"
+						ref={user_Input_Ref}
+					/>
+
+					<button name="task_Submission_Button" className="user_Input_Submission_Button">
+						<span>Add Task</span>
+					</button>
+				</>
+			)}
+		</form>
     )
 }
 
