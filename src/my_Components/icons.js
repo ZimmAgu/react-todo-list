@@ -8,7 +8,8 @@
 
 import React, {useState} from 'react'
 import Form from './form'
-import {AiFillCloseCircle} from 'react-icons/ai'
+import {AiOutlineEdit} from 'react-icons/ai'
+import {AiOutlineCloseCircle} from 'react-icons/ai'
 import {AiFillEdit} from 'react-icons/ai'
 
 function IconLogic ({stored_Items, complete_Task, update_Task, remove_Task}) {
@@ -46,17 +47,16 @@ function IconLogic ({stored_Items, complete_Task, update_Task, remove_Task}) {
             </div>
 
             <div className="icons">
-                <div>
-                    <AiFillCloseCircle 
-                        onClick={() => remove_Task(current_Item.task_Id)}
-                    />
-                    <AiFillEdit 
-                        onClick={() => set_Edition({
-                                            task_Id: current_Item.task_Id,
-                                            edition_Value: current_Item.task_Value
-                                        })}
-                    />
-                </div>
+                <AiOutlineEdit className="edit_Icon"
+                    onClick={() => set_Edition({
+                                        task_Id: current_Item.task_Id,
+                                        edition_Value: current_Item.task_Value
+                                    })}
+                />
+
+                <AiOutlineCloseCircle className="delete_Icon"
+                    onClick={() => remove_Task(current_Item.task_Id)}
+                />
             </div>
         </div>   
     ));

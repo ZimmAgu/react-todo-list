@@ -52,7 +52,7 @@ function Form (props) {
 						ref={user_Input_Ref}
 					/>
 
-					<button name="task_Submission_Button" className="user_Input_Submission_Button">
+					<button name="update_Task_Button" className="task_Submission_Button">
 						<span>Update task</span>
 					</button>
 				</>
@@ -68,7 +68,7 @@ function Form (props) {
 						ref={user_Input_Ref}
 					/>
 
-					<button name="task_Submission_Button" className="user_Input_Submission_Button">
+					<button name="add_Task_Button" className="task_Submission_Button">
 						<span>Add Task</span>
 					</button>
 				</>

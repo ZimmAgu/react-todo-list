@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Background Color For the web page */
+html {
+    background-image: linear-gradient(to bottom right, rgba(86, 116, 255, 1), rgba(77, 189, 255, 1));
+    width: 100%;
+    height: 100%;
+}
+
+body { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Contains everything besides the background */
+.entire_List {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    text-align: center;
+
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 40em;
+    min-height: 35em;
+    padding: 2em 0em 5em 0em;
+    border-radius: 20px;
+    margin: 5em 0em 5em 0em;
+
+    font-family: Noto Sans, sans-serif;
+    color: white;
+}
+
+/* The header at the top of the list  */
+h1 {
+    font-size: 3em;
+}
+
+/* The text box that the user types in  */
+.user_Input_Text_Box {
+    padding: 1em 12em 1em 1em;
+    margin: 2em 0em 2em 0em;
+    background: transparent;
+    outline: none;
+    border: 1px solid black;
+    color: white;
+    font-size: 1em;
+}
+
+/* The text in the user input box when it is blank */
+.user_Input_Text_Box::placeholder {
+    color: white;
+}
+
+/* The add task & update task buttons */
+.task_Submission_Button {
+    padding: 1em;
+    font-size: 1em;
+}
+
+/* Contains the user-added task, edit button, & delete button */
+.task_Row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: navy;
+    width: 75%;
+    padding: 1em;
+    margin: 0.5em 0em 0.5em 0em;
+
+    font-size: 1em;
+    font-weight: bold;
+}
+
+
+.icons {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.5em;
+}
+
+.delete_Icon {
+    margin-left: 0.7em;
+}
+
+
+
