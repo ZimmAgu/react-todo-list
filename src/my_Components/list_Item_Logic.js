@@ -75,7 +75,7 @@ function ListItemLogic () {
 
     return (
         <>
-            <h1>Plan your day</h1>
+            <h1>Plan Your Day</h1>
             <Form onSubmit={handle_Task_Addition}/>  
             <IconLogic 
                 stored_Items={stored_List_Items}
