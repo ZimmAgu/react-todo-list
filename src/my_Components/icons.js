@@ -10,7 +10,6 @@ import React, {useState} from 'react'
 import Form from './form'
 import {AiOutlineEdit} from 'react-icons/ai'
 import {AiOutlineCloseCircle} from 'react-icons/ai'
-import {AiFillEdit} from 'react-icons/ai'
 
 function IconLogic ({stored_Items, complete_Task, update_Task, remove_Task}) {
     const [current_Edition, set_Edition] = useState({

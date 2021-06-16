@@ -6,7 +6,7 @@
 
 /* Background Color For the web page */
 html {
-    background-image: linear-gradient(to bottom right, rgba(86, 116, 255, 1), rgba(77, 189, 255, 1));
+    background-image: linear-gradient(to right, rgba(86, 116, 255, 1), rgba(77, 189, 255, 1));
     width: 100%;
     height: 100%;
 }
@@ -22,7 +22,7 @@ body {
 .entire_List {
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: flex-start;
     flex-direction: column;
     text-align: center;
 
@@ -79,6 +79,21 @@ h1 {
     font-weight: bold;
 }
 
+.task_Row:nth-child(4n) {
+    background: linear-gradient(to right,rgba(179, 34, 100, 1),rgba(179, 34, 49, 1));
+}
+
+.task_Row:nth-child(4n + 1) {
+    background: linear-gradient(to right,rgba(179, 118, 34, 1),rgba(155, 0, 250, 1));
+}
+  
+.task_Row:nth-child(4n + 2) {
+    background: linear-gradient(to right,rgba(34, 179, 73, 1),rgba(34, 179, 154, 1));
+}
+  
+.task_Row:nth-child(4n + 3) {
+    background: linear-gradient(to right,rgba(34, 73, 179, 1),rgba(79, 34, 179, 1));
+}
 
 .icons {
     display: flex;
@@ -91,5 +106,8 @@ h1 {
     margin-left: 0.7em;
 }
 
-
-
+.completed {
+    text-decoration: line-through;
+    cursor: pointer;
+    opacity: 0.4;
+}

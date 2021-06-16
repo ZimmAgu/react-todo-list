@@ -36,7 +36,6 @@ function ListItemLogic () {
         const all_List_Items = [current_List_Item, ...stored_List_Items];  // Keeps track of the current list item as well as the previous list item
 
         set_list_Item(all_List_Items); // Pushes the new value of the list item to storage
-        console.log(current_List_Item, ...stored_List_Items);
     };
 
 
@@ -45,7 +44,7 @@ function ListItemLogic () {
         // Goes through every task in the list with a map
         let completed_Task = stored_List_Items.map(current_Item => {
             // If the current item being clicked matches the key passed to the parameter. The the item gets toggled between complete & incomplete
-            if (current_Item.id === id) {
+            if (current_Item.task_Id === id) {
                 current_Item.isComplete = !current_Item.isComplete;
             }
             return current_Item;
