@@ -44,13 +44,15 @@ h1 {
 
 /* The text box that the user types in  */
 .user_Input_Text_Box {
-    padding: 1em 12em 1em 1em;
+    width: 22em;
+    padding: 1em;
     margin: 2em 0em 2em 0em;
     background: transparent;
     outline: none;
     border: 1px solid rgba(0, 138, 245, 1);
     color: white;
     font-size: 1em;
+    overflow: visible;
 }
 
 /* The text in the user input box when it is blank */
