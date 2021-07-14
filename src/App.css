@@ -27,9 +27,9 @@ body {
     text-align: center;
 
     background-color: rgba(0, 0, 0, 0.7);
-    width: 40em;
+    width: 100%;
     min-height: 35em;
-    padding: 2em 0em 5em 0em;
+    padding: 2em 4em 5em 4em;
     border-radius: 20px;
     margin: 5em 0em 5em 0em;
 
@@ -68,6 +68,7 @@ h1 {
     padding: 1.09em;
     font-size: 1em;
     cursor: pointer;
+    color: white;
 }
 
 /* Contains the user-added task, edit button, & delete button */
